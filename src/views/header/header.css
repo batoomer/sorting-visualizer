@@ -1,0 +1,60 @@
+body > header {
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    height: fit-content;
+    border-bottom: 0.12rem solid var(--color-outline);
+    box-shadow: 0 0 0.125rem 0.1rem var(--color-shadow);
+}
+
+/* Center Content */
+body > header, .header__container {
+    display: grid;
+    place-items: center;
+}
+
+.header__container {
+    padding: 1rem 0;
+    position: relative;
+}
+
+.header__settings {
+    position: absolute;
+    left: 0;
+}
+
+
+.header__theme-btn {
+    position: relative;
+    background-color: var(--color-surface);
+    border: 0.125rem solid var(--color-outline-variant);
+    box-shadow: 0 0 0.1rem 0.05rem var(--color-shadow);
+    transition: background-color var(--transition);
+    padding: 0.5rem;
+    border-radius: 100%;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.header__settings button:hover {
+    background-color: var(--color-inverse-primary);
+}
+
+.header__theme-btn > img {
+    width: 1.5rem;
+    position: absolute;
+    /* Center Images*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* Animation */
+    opacity: 1;
+    transition: opacity var(--transition);
+}
+
+.header__theme-btn > img.hidden{
+    opacity: 0;
+}
+
+
+

@@ -1,0 +1,29 @@
+body > footer {
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+    height: fit-content;
+    border-top: 0.12rem solid var(--color-outline);
+    box-shadow: 0 0 0.125rem 0.025rem var(--color-shadow);
+}
+
+/* Center Content */
+body > footer, body > footer small {
+    display: grid;
+    place-items: center;
+}
+
+
+body > footer small {
+    font-size: 0.9rem;
+    padding: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+body > footer small img {
+    display: inline-block;
+    width: calc(1.5 * 0.9rem);
+}
