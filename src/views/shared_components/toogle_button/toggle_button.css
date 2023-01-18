@@ -1,0 +1,20 @@
+.toggle-btn{
+    cursor: pointer;
+    position: relative;
+}
+
+.toggle-btn > img {
+    width: 80%;
+    position: absolute;
+    /* Center Images*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* Animation */
+    opacity: 1;
+    transition: opacity var(--transition);
+}
+
+.toggle-btn > img.hidden{
+    opacity: 0;
+}

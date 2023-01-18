@@ -1,8 +1,7 @@
 body > footer {
-    background-color: var(--color-primary-container);
-    color: var(--color-on-primary-container);
+    background-color: var(--color-main);
+    color: var(--color-on-main);
     height: fit-content;
-    border-top: 0.12rem solid var(--color-outline);
     box-shadow: 0 0 0.125rem 0.025rem var(--color-shadow);
 }
 
@@ -26,4 +25,6 @@ body > footer small {
 body > footer small img {
     display: inline-block;
     width: calc(1.5 * 0.9rem);
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
 }

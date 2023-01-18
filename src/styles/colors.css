@@ -1,4 +1,9 @@
 :root {
+    --color-main: #828588;
+    --color-main-transparent: #00102675;
+    --color-on-main: #d6e3ff;
+    --color-on-main-2: hsla(221, 100%, 92%, 0.70);
+
     --color-primary: #0062a1;
     --color-on-primary: #ffffff;
     --color-primary-container: #d0e4ff;

@@ -7,7 +7,6 @@
     padding: 0;
     box-sizing: border-box;
     border: 0;
-    outline: 1px solid;
 }
 
 /* VARIABLES */
@@ -35,6 +34,7 @@ body {
     justify-content: space-between;
     font-family: 'Roboto', sans-serif;
     line-height: 1.7;
+    position: relative;
 }
 
 .container {
@@ -47,3 +47,13 @@ img {
     width: 100%;
     object-fit: cover;
 }
+
+button {
+    background-color: transparent;
+}
+
+.page {
+    min-height: calc(100vh - 5.5rem);
+    width: 100%;
+}
+
