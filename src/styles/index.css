@@ -13,7 +13,6 @@
 
 :root {
     --container-width: 80%;
-
     --transition: 500ms ease;
 }
 
@@ -27,14 +26,25 @@
 
 body {
     background-color: var(--color-background);
+    background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
+    url(../images/background.jpg) no-repeat center/ cover fixed;
     color: var(--color-on-background);
+    
     min-height: 100vh;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Roboto', sans-serif;
+    
+    font-family: 'Roboto', 'Times New Roman', Times, serif;
     line-height: 1.7;
+    
     position: relative;
+}
+
+:root.dark-theme body{
+    background: linear-gradient(rgb(0, 0, 0, 0.35), rgb(0, 0, 0, 0.35))
+    ,url(../images/background-dark.jpg) no-repeat center/ cover fixed;
 }
 
 .container {
@@ -53,7 +63,9 @@ button {
 }
 
 .page {
-    min-height: calc(100vh - 5.5rem);
+    min-height: calc(100vh - 4.5rem);
     width: 100%;
+    display: grid;
+    place-items: center;
 }
 

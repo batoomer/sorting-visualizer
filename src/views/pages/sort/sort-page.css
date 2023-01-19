@@ -1,0 +1,127 @@
+.sort-page__container{
+    padding: 0.5rem 0;
+    color: var(--color-on-surface)
+}
+
+.sort-page__header{
+    height: 7.5rem;
+}
+
+.sort-page__title{
+    font-size: 4rem;
+}
+
+.sort-page__visualizer-container{
+    height: calc(100vh - 7.5rem - 5.5rem);
+}
+
+
+/* SORT PAGE ARTICLE STYLE */
+
+.sort-page__article {
+    display: grid;
+    place-items: center;
+    background-color: var(--color-surface1);
+    background: linear-gradient(var(--color-background), var(--color-surface1), var(--color-background-transparent-75));
+    padding: 5rem 0;
+    color: var(--color-on-surface-secondary);
+}
+
+.sort-page__article > .container{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.sort-page__article p{
+    text-align: justify;
+    font-size: 1.2rem;
+}
+
+.sort-page__article section > h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-on-surface);
+}
+
+/* Description Section Style */
+
+.sort-page__description p{
+    text-align: justify;
+    font-size: 1.2rem;
+}
+
+.sort-page__description p+p{
+    margin: 1rem 0;
+}
+
+/* Complexity Section Style */
+
+.sort-page__complexity p+table{
+    margin-top: 2.5rem;
+}
+
+.sort-page__complexity-table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    background-color: var(--color-surface2);
+}
+
+.sort-page__complexity-table th{
+    padding: 0.5rem 1.25rem;
+    font-weight: bold;
+    border-right: 0.125rem solid var(--color-primary);
+   
+}
+
+.sort-page__complexity-table tr {
+    border-bottom: 0.125rem solid var(--color-primary);
+}
+
+tr:nth-child(even) {
+    background-color: var(--color-surface3);
+  }
+
+.sort-page__complexity-table tr:last-child{
+    border-bottom: none;
+}
+
+.sort-page__complexity-table td{
+    padding: 0.5rem 4rem;
+    text-align: center;
+}
+
+/* Pseudocode Section Style */
+
+.sort-page__pseudocode p+pre{
+    margin-top: 2.5rem;
+}
+
+.sort-page__pseudocode > pre{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 0.2rem solid var(--color-primary);
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    background-color: var(--color-surface2);
+}
+
+.sort-page__pseudocode > pre > code .keyword {
+    color: var(--color-code-keyword);
+    font-weight: bold;
+}
+
+.sort-page__pseudocode > pre > code .comment {
+    color: var(--color-code-comment);
+}
+
+.sort-page__pseudocode > pre > code .value {
+    color: var(--color-code-value);
+}
+
+.sort-page__pseudocode > pre > code .function {
+    color: var(--color-code-function);
+}

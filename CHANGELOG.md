@@ -4,10 +4,34 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.4] - 2023-01-?
+- Background Images for light and dark theme
+
+### Changed
+- Colors
+- Overall style
+
+### Added
+- Added view/pages/sort/inplace/InPlaceSortPage.js. 
+- Added view/pages/sort/SortPage.js. Every Page inherits from this class and overides its createVisualizer method.
+- Added views/pages/home/HomePage.js
+- Navbar component
+- Created a new ToggleButton Component 
+- App.js where all the parts are combined
+- views/pages folder to host the pages
+- views/shared_components folder to host shared components 
+
+### Changed
+- Replaced Theme Button of header with a ToggleButton Component
+- Footer and Header Background color
+- view folder structure
+
 ## [0.0.3] - 2023-01-16
 
 ### Added
-- Added views/pages/HomePage.js
+- Added view/pages/sort/inplace/InPlaceSortPage.js. 
+- Added view/pages/sort/SortPage.js. Every Page inherits from this class and overides its createVisualizer method.
+- Added views/pages/home/HomePage.js
 - Navbar component
 - Created a new ToggleButton Component 
 - App.js where all the parts are combined

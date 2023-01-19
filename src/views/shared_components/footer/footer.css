@@ -1,8 +1,7 @@
 body > footer {
-    background-color: var(--color-main);
-    color: var(--color-on-main);
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
     height: fit-content;
-    box-shadow: 0 0 0.125rem 0.025rem var(--color-shadow);
 }
 
 /* Center Content */

@@ -28,8 +28,8 @@ class HomePage {
         arrayBarContainer.classList.add('home-page__bars-container');
         for (let i=0; i<=10; i++){
             const container = document.createElement('div');
-            container.style.height = `${5 + i*10}%`;
-            container.style.width = '0.75rem';
+            container.style.height = `${5 + i*9.5}%`;
+            container.style.width = '10%';
             arrayBarContainer.appendChild(container);
         };
         this.main.firstElementChild.appendChild(arrayBarContainer);

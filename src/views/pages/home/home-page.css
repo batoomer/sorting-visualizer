@@ -1,0 +1,26 @@
+.home-page__container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.home-page__container h1{
+    color: var(--color-on-surface);
+    font-size: 3.5rem;
+    font-weight: bolder;
+    text-align: left;
+    height: 13rem;
+}
+
+.home-page__bars-container{
+    display: flex;
+    height: 10rem;
+    align-items: flex-end;
+    width: 25%;
+}
+
+.home-page__bars-container > div {
+    background-color: var(--color-primary);
+    background: linear-gradient(to right, var(--color-secondary),var(--color-primary));
+}

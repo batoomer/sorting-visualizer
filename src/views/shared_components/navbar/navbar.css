@@ -1,12 +1,12 @@
 .navbar {
     position: fixed;
-    background-color: var(--color-surface-variant);
-    color: var(--color-on-surface-variant);
+    background-color: var(--color-surface1);
+    color: var(--color-on-surface-secondary);
     height: 100vh;
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 0.5rem 0.05rem var(--color-shadow);
-    outline: 0.1rem solid var(--color-outline);
+    
     opacity: 0;
     transform: translateX(-100%);
     transition: all var(--transition);
@@ -73,20 +73,18 @@
 .navbar__subtitle{
     font-size: 1.75rem;
     padding: 0 1rem;
-    color: var(--color-primary);
+    color: var(--color-on-surface);
 }
 
 .navbar__link {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     padding: 0.5rem 1rem 0.5rem 4rem;
     transition: all var(--transition);
 }
 
 .navbar__link:hover {
-    background-color: var(--color-primary-container);
-    color: var(--color-on-primary-container);
-    border-left: 0.25rem solid var(--color-primary);
-    
+    background-color: var(--color-surface3);
+    border-left: 0.25rem solid var(--color-secondary);
 }
 
 .navbar__home-link{
@@ -107,8 +105,9 @@
 }
 
 .navbar__separator {
-    background-color: var(--color-inverse-surface);
-    height: 0.125rem;
+    background-color: var(--color-primary);
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    height: 0.15rem;
     width: 100%;
     display: block;
     padding: 0 1rem;
