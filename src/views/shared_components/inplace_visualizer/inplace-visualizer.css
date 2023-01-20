@@ -1,0 +1,73 @@
+
+
+.inplace-visualizer__container {
+    position: relative;
+}
+
+.array-bar__container{
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.array-bar__container > div {
+    background-color: var(--color-primary);
+    background: linear-gradient(to right, var(--color-secondary),var(--color-primary));
+}
+
+.inplace-visualizer__settings{
+    position: absolute;
+    top: -6rem;
+    right: 1rem;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0.25rem;
+    background-color: var(--color-background-transparent-50);
+
+}
+
+.array-bars__setting-wrapper {
+    min-height: 2.5rem;
+    min-width: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.2rem;
+    padding: 0.25rem;
+}
+
+.array-bars__setting-wrapper.disabled {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.75;
+}
+
+.array-bars__setting-wrapper :disabled {
+    pointer-events: none;
+}
+
+.array-bars__setting-wrapper img {
+    width: 2rem;
+    transition: filter 0.3s ease-in-out;
+}
+
+.array-bars__setting-wrapper button:hover > img {
+    -webkit-filter: invert(77%) sepia(25%) saturate(890%) hue-rotate(327deg) brightness(103%) contrast(101%);
+    filter: invert(77%) sepia(25%) saturate(890%) hue-rotate(327deg) brightness(103%) contrast(101%);
+}
+
+:root.dark-theme .array-bars__setting-wrapper button:hover > img{
+    -webkit-filter: invert(44%) sepia(49%) saturate(507%) hue-rotate(170deg) brightness(93%) contrast(83%);
+    filter: invert(44%) sepia(49%) saturate(507%) hue-rotate(170deg) brightness(93%) contrast(83%);
+}
+
+
+
+
+.array-bars__start-stop-btn{
+    width: 3rem;
+    height: 2rem;
+}

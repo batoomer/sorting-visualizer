@@ -10,8 +10,8 @@
     --color-on-surface: rgb(0, 0, 0);
     --color-on-surface-secondary: rgb(30, 30, 30);
 
-    --color-primary: hsl(26, 100%, 76%);
-    --color-secondary: hsl(15, 89%, 43%);
+    --color-primary: #ffba85;
+    --color-secondary: #cf3d0c;
 
     --color-outline: #8c9199;
     --color-outline-variant: #42474e;
@@ -51,15 +51,14 @@
 
 }
 
-:root.dark-theme .icon {
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-}
-
-/* Transition Effects For Switching Between Themes */
 
 .icon {
-    -webkit-filter: contrast(1);
-    filter: contrast(1);
-    transition: filter var(--transition);
+    -webkit-filter: invert(23%) sepia(80%) saturate(3581%) hue-rotate(13deg) brightness(93%) contrast(91%);
+    filter: invert(23%) sepia(80%) saturate(3581%) hue-rotate(13deg) brightness(93%) contrast(91%);
+    transition: all var(--transition);
+}
+
+:root.dark-theme .icon {
+    -webkit-filter: invert(79%) sepia(6%) saturate(2851%) hue-rotate(179deg) brightness(104%) contrast(98%);
+    filter: invert(79%) sepia(6%) saturate(2851%) hue-rotate(179deg) brightness(104%) contrast(98%);
 }

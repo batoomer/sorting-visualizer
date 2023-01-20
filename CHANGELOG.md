@@ -4,10 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [0.0.4] - 2023-01-?
+## [0.0.4] - 2023-01-20
+
+### Added
+- Input Range general style
+- Shuffle Button Icon
+- bubbleSort.js
+- SortModel.js
+- InPlaceVisualizer Style
+- InPlaceVisualizer to the InPlaceSortPage.js
+- shared_components/inplace_visualizer/InPlaceVisualizer.js
 - Background Images for light and dark theme
 
 ### Changed
+- Start/Stop Button Icons
 - Colors
 - Overall style
 
