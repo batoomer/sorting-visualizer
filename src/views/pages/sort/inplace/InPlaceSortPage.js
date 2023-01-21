@@ -4,7 +4,7 @@ import SortPage from "../SortPage";
 class InPlaceSortPage extends SortPage {
     constructor(algorithmData){
         super(algorithmData);
-        this.visualizer = new InPlaceVisualizer();
+        this.visualizer = new InPlaceVisualizer(algorithmData.title);
     };
 
     createVisualizer(){

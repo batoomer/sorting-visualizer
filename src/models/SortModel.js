@@ -1,4 +1,5 @@
 import bubbleSort from "../algorithms/bubbleSort";
+import selectionSort from "../algorithms/selectionSort";
 
 class SortModel{
 
@@ -26,7 +27,24 @@ class SortModel{
     };
 
     sort(algorithm){
-        const sorter = bubbleSort;
+        let sorter;
+        switch (algorithm){
+            case 'Bubble Sort': {
+                sorter = bubbleSort;
+                break;
+            }
+
+            case 'Selection Sort': {
+                sorter = selectionSort;
+                break;
+            }
+
+            default: {
+                console.log('Invalid Algorithm');
+                break;
+            }
+        }
+        
         this.animation = sorter(this.data);
     };
 

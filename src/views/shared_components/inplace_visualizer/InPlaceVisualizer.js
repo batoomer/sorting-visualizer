@@ -7,7 +7,8 @@ import './inplace-visualizer.css';
 
 class InPlaceVisualizer{
 
-    constructor(){
+    constructor(algorithm){
+        this.algorithm = algorithm;
         this.sortModel = new SortModel()
         this.running = false;
         this.speed = 1;
@@ -145,7 +146,7 @@ class InPlaceVisualizer{
 
     async #startSort(){
         if (!this.sortModel.animation.length){
-            this.sortModel.sort();
+            this.sortModel.sort(this.algorithm);
         };
 
         while (this.sortModel.animation.length && this.running === true){

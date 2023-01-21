@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+
+## [0.0.5] - 2023-01-?
+
+### Added
+- Seleciton Sort Data
+- Selection Sort Page
+
 ## [0.0.4] - 2023-01-20
 
 ### Added
