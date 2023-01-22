@@ -19,11 +19,14 @@ class InPlaceSortPage extends SortPage {
      * Creates the visualizer and appends it to the page container
     */
     createVisualizer(){
-        this.visualizer = this.visualizer.create();
-        this.visualizer.classList.add('sort-page__visualizer-container');
-        this.pageContainer.appendChild(this.visualizer);
-       
+        const visualizerEle = this.visualizer.create();
+        visualizerEle.classList.add('sort-page__visualizer-container');
+        this.pageContainer.appendChild(visualizerEle);
     };
+
+    destroy(){
+        this.visualizer.cancelPromises();
+    }
     
 };
 

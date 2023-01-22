@@ -14,8 +14,10 @@ class InPlaceVisualizer{
         this.running = false;
         this.speed = 1;
         
+        
         this.visualizerContainer = document.createElement('section');
         this.visualizerContainer.classList.add('inplace-visualizer__container');
+        this.promises = [];
     }
 
 
@@ -221,7 +223,13 @@ class InPlaceVisualizer{
     };
 
     sleep(ms){
-        return new Promise(resolve => setTimeout(resolve, ms));
+        let promise = new Promise((resolve, reject) => setTimeout(resolve, ms))
+        this.promises.push(promise);
+        return promise;
+    };
+
+    cancelPromises(){
+        this.running = false;
     };
 };
 

@@ -16,6 +16,11 @@ class HomePage {
         this.main.appendChild(container)
     }
 
+
+    destroy(){
+        
+    }
+
     /**
      * Create the home page and return the main element
      */

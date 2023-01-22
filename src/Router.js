@@ -15,6 +15,8 @@ class Router{
     constructor(){
         // Store the current path to prevent creating new pages for the same path
         this.currentPath = null;
+        // Store the current page to clean up resources
+        this.currentPage = null;
     };
 
     /**
@@ -49,11 +51,19 @@ class Router{
             // Store the new path as the current path
             this.currentPath = path;
             
+            // Free all resources of the current page
+            if (this.currentPage){
+                this.currentPage.destroy();
+            }
+
+            // Get the new page
+            this.currentPage = this.createNewPage(path);
+            
             // Get the main element from the DOM
             const main = document.querySelector('.page');
             
             // Replace the main element with the new page
-            main.replaceWith(this.createNewPage(path));
+            main.replaceWith(this.currentPage.create());
             
             // Scroll to the top of the page
             window.scrollTo(0, 0);
@@ -67,11 +77,11 @@ class Router{
      */
     createNewPage(path) {
         switch(path) {
-            case '/': return new HomePage().create();
-            case '/bubble-sort': return new InPlaceSortPage(bubbleSortInfo).create();
-            case '/selection-sort': return new InPlaceSortPage(selectionSortInfo).create();
-            case '/insertion-sort': return new InPlaceSortPage(insertionSortInfo).create();
-            case '/quick-sort': return new InPlaceSortPage(quickSortInfo).create();
+            case '/': return new HomePage();
+            case '/bubble-sort': return new InPlaceSortPage(bubbleSortInfo);
+            case '/selection-sort': return new InPlaceSortPage(selectionSortInfo);
+            case '/insertion-sort': return new InPlaceSortPage(insertionSortInfo);
+            case '/quick-sort': return new InPlaceSortPage(quickSortInfo);
         };
     }
 };

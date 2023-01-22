@@ -4,8 +4,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.1.0] - 2023-01-22
 
-## [0.0.5] - 2023-01-?
+### Fixed
+- Switching between pages would not stop the visualization
+
+### Changed
+- page classes structure to clear resources
+- Router.js to support clearing of resources
+- README.md
+
+### Added
+- Deployed the page
+- GitHub pages
+
+## [0.0.5] - 2023-01-22
 
 ### Added
 - Added Media Queries for responsiveness
