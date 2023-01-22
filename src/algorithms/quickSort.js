@@ -2,9 +2,6 @@ export default function quickSort(data){
     let animation = [];
 
     __quickSort(data, 0, data.length - 1, animation)
-
-    console.log(animation)
-    console.log(data)
     return animation
 }
 
