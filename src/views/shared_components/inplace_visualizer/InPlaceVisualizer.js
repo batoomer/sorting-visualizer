@@ -5,6 +5,7 @@ import stopIcon from '../../../images/pause-icon.svg';
 import shuffleIcon from '../../../images/shuffle-icon.svg';
 import './inplace-visualizer.css';
 
+
 class InPlaceVisualizer{
 
     constructor(algorithm){
@@ -150,8 +151,11 @@ class InPlaceVisualizer{
         };
 
         while (this.sortModel.animation.length && this.running === true){
+           
             const swapIdxs = this.sortModel.animation.shift();
             await this.#swapArrayBars(...swapIdxs);
+            await this.sleep(10);
+
         };
     };
 
@@ -175,22 +179,24 @@ class InPlaceVisualizer{
 
     async #swapArrayBars(i,j){
         let delay = (1000)/(10**this.speed);
+
         const bar1 = document.querySelector(`[data-array-bar-index="${i}"]`);
         const bar2 = document.querySelector(`[data-array-bar-index="${j}"]`);
 
         let initBackGround = bar1.style.background;
         
         bar1.style.background = 'red';
-        
-        bar1.style.background = initBackGround;
+        bar2.style.background = 'greenyellow'
+        await this.sleep(delay/10);
 
         let temp = bar1.style.height;
         bar1.style.height = bar2.style.height;
         bar2.style.height = temp;
-        
-        await this.sleep(delay/10);
+
+        bar1.style.background = 'greenyellow';
         bar2.style.background = 'red';
-        //await this.sleep(delay/10);
+        await this.sleep(delay/10);
+        bar1.style.background = initBackGround;
         bar2.style.background = initBackGround;
         
     };

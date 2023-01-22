@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 ## [0.0.5] - 2023-01-?
 
 ### Added
+- Insertion Sort Data
+- Insertion Sort Page
+- Documentation 
+- Routing with Hash History
 - Seleciton Sort Data
 - Selection Sort Page
 

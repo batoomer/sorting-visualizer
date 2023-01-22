@@ -1,3 +1,11 @@
+/**
+ * Objects containing information about the respective sorting algorithms. Each object contains the following properties:
+ * 
+ * title: a string representing the title/name of the sorting algorithm.
+ * description: an array of strings providing a brief overview of the sorting algorithm.
+ * complexity: an object providing the time and space complexities of the sorting algorithm.
+ * pseudocode: a string containing a representation of the sorting algorithm in pseudocode format.
+ */
 
 export const bubbleSortInfo = {
     title: 'Bubble Sort',
@@ -64,6 +72,40 @@ export const selectionSortInfo = {
             <span class="keyword">end if</span>
         <span class="keyword">end for</span>
         <span class="keyword">swap</span> A[i] <span class="keyword">with</span> A[minIndex]
+    <span class="keyword">end for</span>
+<span class="keyword">end procedure</span>`
+}
+
+export const insertionSortInfo = {
+    title: 'Insertion Sort',
+    description: [
+        `Insertion sort is a simple sorting algorithm that builds the final sorted list one item at a time. It starts with an empty sorted list 
+        and repeatedly takes the next unsorted item and inserts it into the correct position within the sorted list. This process is repeated until 
+        all items have been inserted into the sorted list. It's similar to how we sort a deck of cards by picking one card at a time and inserting it 
+        into the correct position in the deck.`,
+
+        `Insertion sort is a comparison-based sorting algorithm and has a time complexity of O(n^2) which makes it less efficient for larger lists. 
+        However, it performs well on small lists or data sets and is efficient for data sets that are already partially sorted or have some elements 
+        sorted in reverse order. It's also an in-place sorting algorithm, which means it doesn't require any additional memory space.`
+    ],
+
+    complexity: {
+        bestTime: `Ω(n)`,
+        avgTime: `Θ(n<sup>2</sup>)`,
+        worstTime: `O(n<sup>2</sup>)`,
+        spaceComplexity: 'O(1)',
+    },
+
+    pseudocode: `<span class="keyword">procedure</span> insertionSort( A : list of sortable items )
+    n =  <span class="function">length(</span>A<span class="function">)</span>
+    <span class="keyword">for</span> i = <span class="value">1</span>  <span class="keyword">to</span> n - <span class="value">1</span>
+        j = i
+        <span class="keyword">while</span> j >= <span class="value">0</span>
+            <span class="keyword">if</span> A[j] <= A[j-<span class="value">1</span>]
+                <span class="keyword">swap</span> A[j] <span class="keyword">with</span> A[j-<span class="value">1</span>]
+            <span class="keyword">end if</span>
+            j = j - <span class="value">1</span>
+        <span class="keyword">end while</span>
     <span class="keyword">end for</span>
 <span class="keyword">end procedure</span>`
 }

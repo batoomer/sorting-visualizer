@@ -1,6 +1,13 @@
 import './sort-page.css';
 
+/**
+ * The class creates a sort page with a header, visualizer, and article sections.
+ */
 class SortPage {
+    /**
+     * 
+     * @param {Object} param0 An object with properties title, description, complexity, and pseudocode
+     */
     constructor({title, description, complexity, pseudocode}) {
         this.title = title;
         this.description = description;
@@ -14,6 +21,11 @@ class SortPage {
         this.page.appendChild(this.pageContainer);
     };
 
+    /**
+     * Creates the page and calls other methods to create the different sections of the page.
+     * 
+     * @returns {HTMLElement} main
+     */
     create (){
         this.#createHeader();
         this.createVisualizer();
@@ -21,6 +33,9 @@ class SortPage {
         return this.page;
     };
 
+    /**
+     * Creates the header section of the page with the title of the sort algorithm.
+     */
     #createHeader(){
         const header = document.createElement('header');
         header.classList.add('sort-page__header');
@@ -28,10 +43,18 @@ class SortPage {
         this.pageContainer.appendChild(header);
     };
 
+    /**
+     * An abstract method that needs to be overriden in subclasses.
+     * 
+     * @abstract
+     */
     createVisualizer(){
         throw new Error('createVisualizer() method must be overriden in subclasses');
     };
     
+    /**
+     * Creates the article section of the page with a description, complexity, and pseudocode of the sort algorithm.
+     */
     #createArticle(){
         const article = document.createElement('article');
         article.classList.add('sort-page__article');
@@ -46,6 +69,11 @@ class SortPage {
         this.page.appendChild(article);
     }
 
+    /**
+     * Creates the Description section in the article section.
+     * 
+     * @param {HTMLEelement} article the article element to apppend to.
+     */
     #createDescripton(article){
         const section = this.#createPageSection('sort-page__description', 'Description')
 
@@ -58,7 +86,11 @@ class SortPage {
         article.appendChild(section);
     };
 
-
+    /**
+     * Creates the Complexity section in the article section.
+     * 
+     * @param {HTMLEelement} article the article element to apppend to.
+     */
     #createComplexity(article){
         const section = this.#createPageSection('sort-page__complexity', 'Complexity')
 
@@ -80,6 +112,11 @@ class SortPage {
         article.appendChild(section);
     };
 
+    /**
+     * Creates the Pseudocode section in the article section.
+     * 
+     * @param {HTMLEelement} article the article element to apppend to.
+     */
     #createPseudocode(article){
         const section = this.#createPageSection('sort-page__pseudocode', 'Pseudocode')
         
@@ -94,6 +131,13 @@ class SortPage {
         article.appendChild(section);
     };
 
+    /**
+     * Helper method that creates a section element with a given class and title.
+     * 
+     * @param {String} className A class name for the section
+     * @param {String} title A title for the section
+     * @returns {HTMLElement} section
+     */
     #createPageSection(className, title){
         const section = document.createElement('section');
         section.classList.add(className);

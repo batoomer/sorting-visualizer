@@ -83,7 +83,8 @@
     transition: all var(--transition);
 }
 
-.navbar__link:hover {
+.navbar__link:hover,
+.navbar__link.active {
     background-color: var(--color-surface3);
     border-left: 0.25rem solid var(--color-secondary);
 }

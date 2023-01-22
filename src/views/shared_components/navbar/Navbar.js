@@ -2,15 +2,26 @@ import { inPlaceNavLinks } from "../../../data/navigaton-data";
 import closeIcon from "../../../images/close-icon.svg";
 import './navbar.css';
 
+/**
+ * Navbar class is used to create and manage the navigation bar.
+ */
 class Navbar {
-    constructor(className){
+    /**
+     * Initializes an empty navbar element with a container for a list of links.
+    */  
+    constructor(){
         this.navbar = document.createElement('nav');
-        this.navbar.classList.add('navbar', this.className);
+        this.navbar.classList.add('navbar');
         const listContainer = document.createElement('ul');
         listContainer.classList.add('navbar__list');
         this.navbar.appendChild(listContainer);
     }
 
+    /**
+     * Creates the navbar element and returns it.
+     * This method calls other internal methods to construct the navbar with all its contents.
+     * @returns {HTMLElement} Navbar Element
+     */
     create(){
         this.#creatCloseContainer();
         this.#createHomeLink();
@@ -20,97 +31,108 @@ class Navbar {
         return this.navbar;
     };
 
+    /**
+     * Creates a list item element, a title element, and a link element for the home page. 
+     * It appends the link to the title element, the title element to the list item element 
+     * and the list item element to the navbar.
+     */
     #createHomeLink() {
-        // Create li element
         const listItem = document.createElement('li');
-        
-        // li element contents
-        // Link to Home Page
         const titleElement = document.createElement('h3');
         titleElement.classList.add('navbar__subtitle');
-
         const homeLink = document.createElement('a');
         homeLink.textContent = 'Home';
-        homeLink.href = '/';
-        homeLink.classList.add('navbar__link', 'navbar__home-link');
-        
+        // Link to Home Page
+        homeLink.href = '#/';
+        homeLink.onclick = (e) => {this.#handleNavigationClick(e)};
+        homeLink.classList.add('navbar__link', 'navbar__home-link', 'active');
         titleElement.appendChild(homeLink);
-
-        // Add the contents to the li element
         listItem.appendChild(titleElement);
         
-        // Add the li element to the list
         this.navbar.firstElementChild.append(listItem);
     };
 
+    /**
+     * Creates a list item element and a span element to act as a separator. 
+     * It appends the span element to the list item element, and the list item to the navbar.
+     */
     #createSeparator(){
-        // Create li element
         const listItem = document.createElement('li');
-        
-         // li element contents
          // span element to draw a vertical separator line
         const separator = document.createElement('span');
         separator.classList.add('navbar__separator');
-
-         // Add the contents to the li element
         listItem.appendChild(separator);
-
-        // Add the li element to the list
         this.navbar.firstElementChild.append(listItem);
     };
 
+    /**
+     * Creates a section of links within the Navbar.
+     * It takes in a title and an array of links as parameters.
+     * It creates a main list item, a title element and a sublist element.
+     * It then iterates through the links array, creating a list item and a link element for each.
+     * The link element's text content is set to the name of the link, the href is set to the url of the link.
+     * The onclick event is set to call the handleNavigationClick method.
+     * The list item and link element are then appended to the sublist.
+     * The title element, sublist element and the main list item are then appended to the Navbar.
+     * 
+     * @param {string} title - The title of the section of links
+     * @param {Array} links - An array of link objects containing a name and url property
+     */
     #createSectionLinks(title, links){
-         // Create li element
         const mainListItem = document.createElement('li');
         
-        // Li Element Contents
-        // Create Title
         const titleElement = document.createElement('h3');
         titleElement.textContent = title;
         titleElement.classList.add('navbar__subtitle');
         
-        //Create a sublist
         const linkList = document.createElement('ul');
         linkList.classList.add('navbar__sublist');
 
-        // Iterate trough links array
         links.forEach(link => {
-             // Create li element for the sublist
             const listItem = document.createElement('li');
             listItem.classList.add('navbar__list-item');
             
-            // Sublist Li Element Contents
-            // Create Link to the target page
             const linkElement = document.createElement('a');
             linkElement.textContent = link.name;
             linkElement.href = link.url;
             linkElement.classList.add('navbar__link');
-            // Add Contents to the Sublist li element
+            linkElement.onclick = (e) => {this.#handleNavigationClick(e);};
             listItem.appendChild(linkElement);
 
-            // Add the li to the sublist
             linkList.appendChild(listItem);
         });
 
-        // Add Contents to the li element
         mainListItem.append(titleElement, linkList)
-
-        // Add the li element to the list
         this.navbar.firstElementChild.append(mainListItem);
     };
 
+    /**
+     * Handles the click event on the navigation links.
+     * It removes the active class from the current active link and adds it to the clicked link.
+     * It also closes the navbar if it is open.
+     * 
+     * @param {Event} e - the click event object
+    */
+    #handleNavigationClick(e) {
+        this.navbar.classList.remove('active');
+        const activeLink = document.querySelector('.navbar__link.active');
+        if (e.target !== activeLink){
+            activeLink.classList.remove('active');
+            e.target.classList.add('active');
+        };
+    }
+
+    /**
+     * Creates the close container for the navbar, including the close button and icon.
+     */
     #creatCloseContainer(){
-        // Create container to hold the button
         const container = document.createElement('div');
         container.classList.add('navbar__close-container');
         
-        // Create button
         const button = document.createElement('button');
         button.classList.add('navbar__close-btn');
-        // Add button on click event to close the navbar
-        button.onclick = () => {this.navbar.classList.remove('active')};
+        button.onclick = () => {this.#handleCloseButtonClick()};
 
-        // Create Close Icon
         const closeImage = new Image();
         closeImage.classList.add('icon' ,'navbar__close-icon');
         closeImage.src = closeIcon;
@@ -119,9 +141,16 @@ class Navbar {
         button.appendChild(closeImage);
         container.appendChild(button);
 
-        // Append container to the navbar
         this.navbar.appendChild(container);
     };
+
+    /**
+     * Handles the click event on the close button.
+     * It also closes the navbar if it is open by removing the active class.
+    */
+    #handleCloseButtonClick() {
+        this.navbar.classList.remove('active');
+    }
 };
 
 export default Navbar
