@@ -20,11 +20,6 @@ export const inPlaceNavLinks = [
 
     {
         name: 'Quick Sort',
-        url: ''
-    },
-
-    {
-        name: 'Heap Sort',
-        url: ''
+        url: '#/quick-sort'
     },
 ];

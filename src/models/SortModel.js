@@ -1,5 +1,6 @@
 import bubbleSort from "../algorithms/bubbleSort";
 import insertionSort from "../algorithms/insertionSort";
+import quickSort from "../algorithms/quickSort";
 import selectionSort from "../algorithms/selectionSort";
 
 /**
@@ -65,6 +66,12 @@ class SortModel{
 
             case 'Insertion Sort': {
                 sorter = insertionSort;
+                break;
+            }
+
+            case 'Quick Sort': {
+                sorter = quickSort;
+                break;
             }
 
             default: {

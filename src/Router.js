@@ -1,4 +1,4 @@
-import { bubbleSortInfo, insertionSortInfo, selectionSortInfo } from "./data/sorting-algorithm-data";
+import { bubbleSortInfo, insertionSortInfo, quickSortInfo, selectionSortInfo } from "./data/sorting-algorithm-data";
 import HomePage from "./views/pages/home/HomePage";
 import InPlaceSortPage from "./views/pages/sort/inplace/InPlaceSortPage";
 
@@ -71,6 +71,7 @@ class Router{
             case '/bubble-sort': return new InPlaceSortPage(bubbleSortInfo).create();
             case '/selection-sort': return new InPlaceSortPage(selectionSortInfo).create();
             case '/insertion-sort': return new InPlaceSortPage(insertionSortInfo).create();
+            case '/quick-sort': return new InPlaceSortPage(quickSortInfo).create();
         };
     }
 };

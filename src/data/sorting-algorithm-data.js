@@ -41,7 +41,7 @@ export const bubbleSortInfo = {
         <span class="keyword">end for</span>
     <span class="keyword">until not</span> swapped
 <span class="keyword">end procedure</span>`,
-}
+};
 
 export const selectionSortInfo = {
     title: 'Selection Sort',
@@ -74,7 +74,7 @@ export const selectionSortInfo = {
         <span class="keyword">swap</span> A[i] <span class="keyword">with</span> A[minIndex]
     <span class="keyword">end for</span>
 <span class="keyword">end procedure</span>`
-}
+};
 
 export const insertionSortInfo = {
     title: 'Insertion Sort',
@@ -107,6 +107,59 @@ export const insertionSortInfo = {
             j = j - <span class="value">1</span>
         <span class="keyword">end while</span>
     <span class="keyword">end for</span>
+<span class="keyword">end procedure</span>`
+};
+
+export const quickSortInfo = {
+    title: 'Quick Sort',
+    description: [
+        `Quick sort is a popular and efficient sorting algorithm that uses a divide-and-conquer strategy to sort a given data set. It starts by selecting a "pivot" 
+        element from the data set, and partitioning the other elements into two groups: those less than the pivot and those greater than the pivot. The pivot is then 
+        in its final position in the sorted data set. The process is then repeated recursively on the two partitioned groups until the entire data set is sorted.`,
+
+        `One of the advantages of quick sort is its efficiency, with an average time complexity of O(n log n). Additionally, it has the ability to perform well even 
+        in cases where the input data is already partially sorted or contains many duplicates. However, quick sort also has some drawbacks. One potential issue is that 
+        it can have a worst-case time complexity of O(n^2) if the pivot is chosen poorly, such as always selecting the first or last element in the partition. To mitigate this, 
+        there are pivot selection strategies, such as choosing the median or a random element, that can be used to improve the performance of the algorithm`,
+
+        `The Hoare partition scheme is a method used in the quick sort algorithm to partition an array into two sub-arrays. The Hoare partition scheme uses two indices, a 
+        left index and a right index, to traverse the array and partition it based on a chosen pivot element. The pivot element is usually the middle element of the array, 
+        but it can also be chosen randomly or using other methods. The left index starts at the first element of the array and moves towards the right, while the right index 
+        starts at the last element of the array and moves towards the left. The two indices swap elements that are on the wrong side of the pivot until they meet in the middle, 
+        at which point the array is partitioned and the pivot element is in its final position.`
+    ],
+
+    complexity: {
+        bestTime: `Ω(nlogn)`,
+        avgTime: `Θ(nlogn)`,
+        worstTime: `O(n<sup>2</sup>)`,
+        spaceComplexity: 'O(logn)',
+    },
+
+    pseudocode: `<span class="keyword">procedure</span> quickSort(A : list of sortable items, left : int, right : int)
+    <span class="keyword">if</span> left < right
+        p = <span class="function">hoare_partition(</span>A, left, right<span class="function">)</span>
+        <span class="function">quickSort(</span>A, left, p<span class="function">)</span>
+        <span class="function">quickSort(</span>A, p+<span class="value">1</span>, right<span class="function">)</span>
+    <span class="keyword">end if</span>
+<span class="keyword">end procedure</span>
+
+
+<span class="keyword">procedure</span> hoare_partition(A : list of sortable items, left : int, right : int)
+    pivot = A[(left + right) / <span class="value">2</span>]
+    i = left - <span class="value">1</span>
+    j = right + <span class="value">1</span>
+    <span class="keyword">while</span> <span class="value">true</span>
+        <span class="keyword">repeat</span>
+            i = i + <span class="value">1</span>
+        <span class="keyword">until</span> A[i] >= pivot
+        <span class="keyword">repeat</span>
+            j = j - <span class="value">1</span>
+        <span class="keyword">until</span> A[j] <= pivot
+        <span class="keyword">if</span> i >= j
+            <span class="keyword">return</span> j
+        <span class="keyword">end if</span>
+        <span class="keyword">swap</span> A[i] <span class="keyword">with</span> A[j]
 <span class="keyword">end procedure</span>`
 }
 
