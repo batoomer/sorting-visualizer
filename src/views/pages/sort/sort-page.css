@@ -125,3 +125,16 @@ tr:nth-child(even) {
 .sort-page__pseudocode > pre > code .function {
     color: var(--color-code-function);
 }
+
+
+@media screen and (max-width: 1024px) {
+    .sort-page__pseudocode > pre{
+        width: 90%;
+        white-space: pre-wrap;
+    }
+
+    .sort-page__pseudocode > pre{
+        padding: 1rem;
+        font-size: clamp(0.5rem, 1.75vw, 1rem);
+    }
+}

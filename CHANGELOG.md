@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.
 ## [0.0.5] - 2023-01-?
 
 ### Added
+- Added Media Queries for responsiveness
+- Added Qucik Sort Data
+- Added Quick Sort Page
 - Insertion Sort Data
 - Insertion Sort Page
 - Documentation 

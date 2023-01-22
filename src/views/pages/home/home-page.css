@@ -24,3 +24,15 @@
     background-color: var(--color-primary);
     background: linear-gradient(to right, var(--color-secondary),var(--color-primary));
 }
+
+
+@media screen and (max-width: 800px) {
+    .home-page__container{
+        justify-content: center;
+    }
+
+    .home-page__container h1{
+        font-size: 3rem;
+        vertical-align: center;  
+    }
+}

@@ -64,10 +64,27 @@
     filter: invert(44%) sepia(49%) saturate(507%) hue-rotate(170deg) brightness(93%) contrast(83%);
 }
 
-
-
-
 .array-bars__start-stop-btn{
     width: 3rem;
     height: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .inplace-visualizer__container {
+       display: flex;
+       flex-direction: column;
+       gap: 1rem;
+    }
+
+    .inplace-visualizer__settings{
+        order: 1;
+        position: initial;
+        top: initial;
+        right: initial;
+        justify-content: center
+    }
+
+    .array-bar__container{
+        order: 2
+    }
 }
